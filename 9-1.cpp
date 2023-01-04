@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main(){
   char rank;
   cout << "Input your rank: ";
   cin >> rank;
@@ -17,8 +16,7 @@ int main()
   if (rank == 'D'|| rank == 'C'|| rank == 'B'|| rank == 'A'|| rank == 'S')
     cout << "You have received very KAK items.\n";
 
-
-  
+ 
   return 0;
 }
 
@@ -32,3 +30,15 @@ int main()
   }*/
 
   //Kong >W<
+
+
+ /* switch (expression)
+  {
+  case  constant-expression :
+    code 
+    break;
+  
+  default:
+    break;
+  } 
+  */
