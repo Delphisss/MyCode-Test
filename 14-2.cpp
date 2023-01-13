@@ -52,3 +52,5 @@ void updateImage(bool aray[][M],int s,int x,int y){
         }
     }
 }
+
+//Kong >w<
