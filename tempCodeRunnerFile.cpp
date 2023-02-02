@@ -1,1 +1,0 @@
-"Input your brush size and location:
