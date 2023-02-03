@@ -5,7 +5,7 @@
 #include <string> //ใช้กับ stod sto_ สร้างตัวแปรใช้เก็บข้อความ
 #include <iomanip>  //set(w) setprecision 
 #include <fstream> //เรียกใช้เมื่อดึงข้อมูลจากไฟล์อื่นหรือสร้างไฟล์อื่น dest ifstram ofstream 
-using namespace std ; //ใช้้ namespace standard เวลาพิมพ์จได้ไม่ต้องใช้ std :: 
+ using namespace std ; //ใช้้ namespace standard เวลาพิมพ์จได้ไม่ต้องใช้ std :: 
 
 
 /* 
@@ -129,5 +129,71 @@ ex .
 ex.
        char x[] = {'h','e','l','l','o'} ;
     cout << x;  ค่าที่ออกใน terminal คือ hellogÇ
+    
+    
+    #include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+
+int main (){
+	ifstream source;
+	ofstream dest;
+	source.open("cheerbook.txt");
+	dest.open("cheerbook_copy.txt");
+	
+	string textline ;
+    dest << "-------------------- BOOM ---------------------\n" ;
+    while (getline(source,textline)) 
+        {
+        dest<<textline<<"\n" ;
+        }
+    dest << "-------------------- HA!! ---------------------" ;
+
+    source.close();
+    dest.close();
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 */
