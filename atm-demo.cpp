@@ -4,6 +4,8 @@
 
 using namespace std;
 
+float balance = 2000; //ลบออก
+
 void highlight(int index, bool selected) { 
     int l = 0 ;
     
@@ -15,19 +17,19 @@ void highlight(int index, bool selected) {
     // print the option label
     switch (index) {
         case 1:
-            l = 28 ;
+            l = 29 ;
             cout << "Deposit";
             break;
         case 2:
-            l = 27 ;
+            l = 28 ;
             cout << "Withdraw";
             break;
         case 3:
-            l = 20 ;
+            l = 21 ;
             cout << "Balance Inquiry";
             break;
         case 4:
-            l = 31 ;
+            l = 32 ;
             cout << "Exit";
             break;
         default:
@@ -100,19 +102,40 @@ int main() {
                         // display the selected option
                         switch (choice) {
                             case 1:
-                                cout << "You selected Deposit.\n";
+                                // Deposit
+                                double depositAmount;
+                                cout << "Enter the amount to deposit: ";
+                                cin >> depositAmount;
+                                if (depositAmount > 0) {
+                                    balance += depositAmount;
+                                    cout << "Deposit successful! Your new balance is: $" << fixed << setprecision(2) << balance << "\n";
+                                } else {
+                                    cout << "Invalid deposit amount.\n";
+                                }
                                 break;
                             case 2:
-                                cout << "You selected Withdraw.\n";
+                                // Withdraw
+                                double withdrawAmount;
+                                cout << "Enter the amount to withdraw: ";
+                                cin >> withdrawAmount;
+                                if (withdrawAmount <= balance && withdrawAmount > 0) {
+                                    balance -= withdrawAmount;
+                                    cout << "Withdrawal successful! Your new balance is: $" << fixed << setprecision(2) << balance << "\n";
+                                } else {
+                                    cout << "Invalid withdrawal amount.\n";
+                                }
                                 break;
                             case 3:
-                                cout << "You selected Balance Inquiry.\n";
+                                // Balance Inquiry
+                                cout << "Your current balance is: $" << fixed << setprecision(2) << balance << "\n";
                                 break;
                             case 4:
-                                cout << "You selected Exit.\n" ;
+                                // Exit
+                                cout << "Thank you for using this ATM. Goodbye!\n";
+                                exit(0);  // terminate the program
                                 break;
                         }
-                        
+
                         return 0;
     
     } else {
