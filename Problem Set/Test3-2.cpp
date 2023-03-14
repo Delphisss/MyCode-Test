@@ -98,6 +98,9 @@ int main()
 {
 // x y z v เอามาแทนเฉยๆตอนเรียกพร้อมกัน ถ้าใช x มันจะทับ
 system("cls");
+cout << "==================";
+cout << endl;
+
 Card x = Card("CLUB A");
 cout << x.suit;
 cout << endl;
