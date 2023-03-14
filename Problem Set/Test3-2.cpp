@@ -11,12 +11,28 @@ public:
     Card(string cardString) {
         suit = cardString.substr(0, cardString.find(' '));
         face = cardString.substr(cardString.find(' ') + 1);
-        if (face.length() > 1) {
+        if (face.length() > 2) {
             face[0] = toupper(face[0]);
             face[1] = tolower(face[1]);
+            suit[0] = toupper(suit[0]);
+            suit[1] = toupper(suit[1]);
+            suit[2] = toupper(suit[2]);
+            suit[3] = toupper(suit[3]);
+            suit[4] = toupper(suit[4]);
+            suit[5] = toupper(suit[5]);
+            suit[6] = toupper(suit[6]);
         }
         else {
             face[0] = toupper(face[0]);
+            suit[0] = toupper(suit[0]);
+            suit[1] = toupper(suit[1]);
+            suit[2] = toupper(suit[2]);
+            suit[3] = toupper(suit[3]);
+            suit[4] = toupper(suit[4]);
+            suit[5] = toupper(suit[5]);
+            suit[6] = toupper(suit[6]);
+
+
         }
     }
 
@@ -77,3 +93,55 @@ public:
         return false;
     }
 };
+
+int main()
+{
+Card x = Card("CLUB A");
+cout << x.suit;
+}
+
+/*
+Test
+	     
+Card x = Card("CLUB A");
+cout << x.suit;
+Result 
+CLUB
+
+Card x = Card("SPADE 2");
+cout << x.face;
+Result 
+2
+
+Card x = Card("DiamonD k");
+cout << x.face << "\n" << x.suit;
+Result
+K
+DIAMOND
+
+Card x = Card("Heart 10");
+cout << x.face << "\n" << x.suit;
+Result
+10
+HEART
+
+cout << (Card("Spade 10") > Card("Spade 2"));
+Result
+0
+
+cout << (Card("CLUB 2") > Card("Spade 2"));
+Result
+0
+
+cout << (Card("Diamond A") > Card("Heart 4"));
+Result
+1
+
+cout << (Card("SPADE A") > Card("SPADE 4"));
+Result
+1
+
+cout << (Card("Heart K") > Card("heart Q"));
+Result
+1
+*/
