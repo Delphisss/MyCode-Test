@@ -11,7 +11,7 @@ public:
     Card(string cardString) {
         suit = cardString.substr(0, cardString.find(' '));
         face = cardString.substr(cardString.find(' ') + 1);
-        if (face.length() > 2) {
+        if (face.length() > 1) {
             face[0] = toupper(face[0]);
             face[1] = tolower(face[1]);
             suit[0] = toupper(suit[0]);
@@ -96,8 +96,78 @@ public:
 
 int main()
 {
+// x y z v เอามาแทนเฉยๆตอนเรียกพร้อมกัน ถ้าใช x มันจะทับ
+system("cls");
 Card x = Card("CLUB A");
 cout << x.suit;
+cout << endl;
+cout << "==================";
+cout << endl;
+//Result 
+//CLUB
+
+Card y = Card("SPADE 2");
+cout << y.face;
+cout << endl;
+cout << "==================";
+cout << endl;
+
+//Result 
+//2
+
+Card z = Card("DiamonD k");
+cout << z.face << "\n" << z.suit;
+cout << endl;
+cout << "==================";
+cout << endl;
+//Result
+//K
+//DIAMOND
+
+Card v = Card("Heart 10");
+cout << v.face << "\n" << v.suit;
+cout << endl;
+cout << "==================";
+cout << endl;
+//Result
+//10
+//HEART
+
+cout << (Card("Spade 10") > Card("Spade 2"));
+cout << endl;
+cout << "==================";
+cout << endl;
+//Result
+//0
+
+cout << (Card("CLUB 2") > Card("Spade 2"));
+cout << endl;
+cout << "==================";
+cout << endl;
+//Result
+//0
+
+cout << (Card("Diamond A") > Card("Heart 4"));
+cout << endl;
+cout << "==================";
+cout << endl;
+//Result
+//1
+
+cout << (Card("SPADE A") > Card("SPADE 4"));
+cout << endl;
+cout << "==================";
+cout << endl;
+//Result
+//1
+
+cout << (Card("Heart K") > Card("heart Q"));
+cout << endl;
+cout << "==================";
+cout << endl;
+//Result
+//1
+
 }
 
 /*
