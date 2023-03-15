@@ -34,16 +34,12 @@ int x,y,z,j,k,l ;
 
 }
 
-
-
-
 int main(){
 
-
-    int a = 1, b = 1, c = 2;
+    system("cls");
+    int a = 1, b = 5, c = 3;
     sort3ints(&a,&b,&c);
     printf("%d %d %d",a,b,c);
-
 }
 
 
@@ -51,7 +47,6 @@ int main(){
     /*
     sort3ints(a,b,c);
     cout << a << endl << b << endl  << c << endl ;
-
 
     sort3ints(&a,&b,&c);
     printf("%d %d %d",a,b,c);
